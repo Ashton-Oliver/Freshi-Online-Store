@@ -1,0 +1,105 @@
+<!-- License ID: DEVOMATE-SRC-20260120-WDUXQAF9EG | ashyben10@gmail.com | 2026-01-20 01:03:41 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freshi – Organic Grocery</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Custom Tailwind Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2F7D32',
+                        primaryDark: '#256428',
+                        softGreen: '#A5D6A7',
+                        lightBg: '#F5F5DC'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-white text-gray-800">
+
+
+    <!-- ORDER SUCCESS -->
+<section class="min-h-[100vh] flex items-center justify-center bg-lightBg px-6">
+  <div
+    class="bg-white rounded-3xl shadow-xl p-10 max-w-lg w-full text-center fade-up">
+
+    <!-- ICON -->
+    <div
+      class="w-24 h-24 mx-auto flex items-center justify-center rounded-full
+             bg-green-100 text-primary text-5xl mb-6 animate-bounce">
+      <i class="fa-solid fa-circle-check"></i>
+    </div>
+
+    <!-- TITLE -->
+    <h1 class="text-3xl font-extrabold mb-3 text-gray-900">
+      Order Placed Successfully!
+    </h1>
+
+    <!-- MESSAGE -->
+    <p class="text-gray-600 mb-6">
+      Thank you for shopping with <span class="font-semibold text-primary">Freshi</span>.
+      Your organic groceries will be delivered soon.
+    </p>
+
+    <!-- ORDER INFO -->
+    <div class="bg-lightBg rounded-2xl p-4 mb-6 text-left text-sm text-gray-700">
+      <div class="flex justify-between mb-2">
+        <span>Order ID</span>
+        <span class="font-semibold">#VG123456</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span>Payment Method</span>
+        <span>Cash on Delivery</span>
+      </div>
+      <div class="flex justify-between">
+        <span>Total Amount</span>
+        <span class="font-semibold text-primary">R60</span>
+      </div>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+      <a
+        href="shop.html"
+        class="px-6 py-3 rounded-xl font-semibold border border-primary text-primary
+               hover:bg-primary hover:text-white transition">
+        Continue Shopping
+      </a>
+
+      <a
+        href="index.html"
+        class="px-6 py-3 rounded-xl font-semibold bg-primary text-white
+               hover:bg-primaryDark hover:shadow-lg transition">
+        Go to Home
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,510 @@
+<!-- License ID: DEVOMATE-SRC-20260120-WDUXQAF9EG | ashyben10@gmail.com | 2026-01-20 01:03:41 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freshi – Organic Grocery</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Custom Tailwind Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2F7D32',
+                        primaryDark: '#256428',
+                        softGreen: '#A5D6A7',
+                        lightBg: '#F5F5DC'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-white text-gray-800">
+
+
+    <!-- TOPBAR -->
+    <div class="border-b bg-white fade-in">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+
+
+            <!-- CENTER LOGO -->
+            <div class="text-2xl font-bold text-primary tracking-wide">
+                🌿 Freshi
+            </div>
+
+            <!-- SEARCH -->
+            <div class="hidden md:flex flex-1 max-w-md">
+                <div class="relative w-full">
+                    <input type="text" placeholder="Search organic products..."
+                        class="w-full border rounded-full px-4 py-2 pl-10 focus:ring-2 focus:ring-primary outline-none" />
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+
+            <!-- RIGHT ICONS -->
+            <div class="flex items-center gap-5">
+                <!-- Cart -->
+                <a href="cart.html">
+                    <div class="relative cursor-pointer hover:scale-110 transition">
+                        <i class="fa-solid fa-cart-shopping text-xl text-gray-700"></i>
+                        <span
+                            class="absolute -top-2 -right-2 bg-primary text-white text-xs px-1.5 rounded-full">2</span>
+                    </div>
+                </a>
+
+
+                <!-- Profile Dropdown -->
+                <div class="relative group">
+                    <i class="fa-solid fa-user text-xl cursor-pointer text-gray-700"></i>
+
+                    <!-- Dropdown -->
+                    <div
+                        class="absolute right-0 mt-3 w-40 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto">
+                        <a href="#" class="block px-4 py-2 hover:bg-lightBg">Login</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-lightBg">Register</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-lightBg">Orders</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-md fade-up sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <ul class="flex justify-center gap-10 py-4 font-semibold text-gray-700">
+
+                <a href="index.html">
+                    <li class="relative group cursor-pointer transition hover:-translate-y-0.5">
+                        <span>Home</span>
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                </a>
+
+
+                <a href="shop.html">
+                    <li class="relative group cursor-pointer transition hover:-translate-y-0.5">
+                        <span>Shop</span>
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                </a>
+
+                <a href="categories.html">
+                    <li class="relative group cursor-pointer transition hover:-translate-y-0.5">
+                        <span>Categories</span>
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                </a>
+
+                <a href="blogs.html">
+                    <li class="relative group cursor-pointer transition hover:-translate-y-0.5">
+                        <span>Blogs</span>
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                </a>
+
+                <a href="contact.html">
+
+                    <li class="relative group cursor-pointer transition hover:-translate-y-0.5">
+                        <span>Contact</span>
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+
+                </a>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SHOP HEADER -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 fade-up">
+                <div>
+                    <h1 class="text-3xl font-extrabold text-gray-900">
+                        Shop <span class="text-primary">Organic Groceries</span>
+                    </h1>
+                    <p class="text-gray-600 mt-1">
+                        Fresh, healthy and chemical-free products
+                    </p>
+                </div>
+
+                <!-- Search -->
+                <div class="relative w-full md:w-96">
+                    <input type="text" placeholder="Search products..."
+                        class="w-full border rounded-full px-5 py-3 pl-12 focus:ring-2 focus:ring-primary outline-none" />
+                    <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SHOP CONTENT -->
+    <section class="py-16 bg-lightBg">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-4 gap-10">
+
+            <!-- FILTER SIDEBAR -->
+            <aside class="bg-white rounded-2xl shadow-md p-6 fade-up h-fit">
+
+                <h3 class="font-bold text-lg mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-filter text-primary"></i> Filters
+                </h3>
+
+                <!-- Category -->
+                <div class="mb-6">
+                    <h4 class="font-semibold mb-3">Category</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><input type="checkbox"> Fruits</li>
+                        <li><input type="checkbox"> Vegetables</li>
+                        <li><input type="checkbox"> Dairy</li>
+                        <li><input type="checkbox"> Grains</li>
+                        <li><input type="checkbox"> Spices</li>
+                    </ul>
+                </div>
+
+                <!-- Price -->
+                <div class="mb-6">
+                    <h4 class="font-semibold mb-3">Price Range</h4>
+                    <input type="range" class="w-full accent-green-600">
+                    <div class="flex justify-between text-sm text-gray-500 mt-2">
+                        <span>R0</span><span>R200</span>
+                    </div>
+                </div>
+
+                <!-- Availability -->
+                <div>
+                    <h4 class="font-semibold mb-3">Availability</h4>
+                    <label class="flex items-center gap-2 text-gray-600">
+                        <input type="checkbox"> In Stock Only
+                    </label>
+                </div>
+
+            </aside>
+
+            <!-- PRODUCTS GRID -->
+            <div class="lg:col-span-3 grid sm:grid-cols-2 md:grid-cols-3 gap-8 items-start">
+
+
+                <!-- PRODUCT CARD (COMPACT FIX) -->
+                <div class="group bg-white rounded-3xl shadow-md hover:shadow-xl
+         transition-all duration-300 hover:-translate-y-2
+         fade-up relative overflow-hidden">
+
+                    <!-- IMAGE -->
+                    <div class="relative h-48 overflow-hidden rounded-t-3xl">
+                        <img src="images/organic apple.jpg"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+
+                        <!-- Wishlist -->
+                        <button class="absolute top-3 right-3 bg-white p-2 rounded-full shadow
+             opacity-0 group-hover:opacity-100 transition
+             hover:bg-primary hover:text-white">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <!-- CONTENT -->
+                    <div class="p-4">
+
+                        <h3 class="font-semibold text-base leading-snug mb-1 truncate">
+                            Organic Apples Fresh
+                        </h3>
+
+                        <div class="flex items-center justify-between text-sm mb-3">
+                            <span class="text-primary font-bold">R30 / kg</span>
+                            <span class="text-green-600 flex items-center gap-1">
+                                <i class="fa-solid fa-circle-check text-xs"></i> In Stock
+                            </span>
+                        </div>
+
+                        <!-- ACTIONS -->
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-primary text-white py-2 rounded-xl font-semibold
+               hover:bg-primaryDark hover:shadow-md
+               transition active:scale-95">
+                                <i class="fa-solid fa-cart-plus mr-1"></i> Add
+                            </button>
+
+                            <a href="shop-details.html">
+                                <button class="w-11 h-10 border border-primary text-primary rounded-xl
+               hover:bg-primary hover:text-white transition">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- SUBTLE GLOW -->
+                    <div class="absolute inset-0 rounded-3xl ring-1 ring-primary
+           opacity-0 group-hover:opacity-15 transition pointer-events-none">
+                    </div>
+                </div>
+
+
+                <div class="group bg-white rounded-3xl shadow-md hover:shadow-xl
+         transition-all duration-300 hover:-translate-y-2
+         fade-up relative overflow-hidden">
+
+                    <!-- IMAGE -->
+                    <div class="relative h-48 overflow-hidden rounded-t-3xl">
+                        <img src="images/fresh milk.jpg"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+
+                        <!-- Wishlist -->
+                        <button class="absolute top-3 right-3 bg-white p-2 rounded-full shadow
+             opacity-0 group-hover:opacity-100 transition
+             hover:bg-primary hover:text-white">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <!-- CONTENT -->
+                    <div class="p-4">
+
+                        <h3 class="font-semibold text-base leading-snug mb-1 truncate">
+                            Milk
+                        </h3>
+
+                        <div class="flex items-center justify-between text-sm mb-3">
+                            <span class="text-primary font-bold">R20 / Ltr</span>
+                            <span class="text-green-600 flex items-center gap-1">
+                                <i class="fa-solid fa-circle-check text-xs"></i> In Stock
+                            </span>
+                        </div>
+
+                        <!-- ACTIONS -->
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-primary text-white py-2 rounded-xl font-semibold
+               hover:bg-primaryDark hover:shadow-md
+               transition active:scale-95">
+                                <i class="fa-solid fa-cart-plus mr-1"></i> Add
+                            </button>
+
+                            <a href="shop-details.html">
+                                <button class="w-11 h-10 border border-primary text-primary rounded-xl
+               hover:bg-primary hover:text-white transition">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- SUBTLE GLOW -->
+                    <div class="absolute inset-0 rounded-3xl ring-1 ring-primary
+           opacity-0 group-hover:opacity-15 transition pointer-events-none">
+                    </div>
+                </div>
+
+
+                <div class="group bg-white rounded-3xl shadow-md hover:shadow-xl
+         transition-all duration-300 hover:-translate-y-2
+         fade-up relative overflow-hidden">
+
+                    <!-- IMAGE -->
+                    <div class="relative h-48 overflow-hidden rounded-t-3xl">
+                        <img src="images/tomattos.jpg"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+
+                        <!-- Wishlist -->
+                        <button class="absolute top-3 right-3 bg-white p-2 rounded-full shadow
+             opacity-0 group-hover:opacity-100 transition
+             hover:bg-primary hover:text-white">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <!-- CONTENT -->
+                    <div class="p-4">
+
+                        <h3 class="font-semibold text-base leading-snug mb-1 truncate">
+                            Tomattos
+                        </h3>
+
+                        <div class="flex items-center justify-between text-sm mb-3">
+                            <span class="text-primary font-bold">R15 / kg</span>
+                            <span class="text-green-600 flex items-center gap-1">
+                                <i class="fa-solid fa-circle-check text-xs"></i> In Stock
+                            </span>
+                        </div>
+
+                        <!-- ACTIONS -->
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-primary text-white py-2 rounded-xl font-semibold
+               hover:bg-primaryDark hover:shadow-md
+               transition active:scale-95">
+                                <i class="fa-solid fa-cart-plus mr-1"></i> Add
+                            </button>
+
+                            <a href="shop-details.html">
+                                <button class="w-11 h-10 border border-primary text-primary rounded-xl
+               hover:bg-primary hover:text-white transition">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- SUBTLE GLOW -->
+                    <div class="absolute inset-0 rounded-3xl ring-1 ring-primary
+           opacity-0 group-hover:opacity-15 transition pointer-events-none">
+                    </div>
+                </div>
+
+
+                <div class="group bg-white rounded-3xl shadow-md hover:shadow-xl
+         transition-all duration-300 hover:-translate-y-2
+         fade-up relative overflow-hidden">
+
+                    <!-- IMAGE -->
+                    <div class="relative h-48 overflow-hidden rounded-t-3xl">
+                        <img src="images/cauliflowers.jpg"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+
+                        <!-- Wishlist -->
+                        <button class="absolute top-3 right-3 bg-white p-2 rounded-full shadow
+             opacity-0 group-hover:opacity-100 transition
+             hover:bg-primary hover:text-white">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <!-- CONTENT -->
+                    <div class="p-4">
+
+                        <h3 class="font-semibold text-base leading-snug mb-1 truncate">
+                            Fresh Cauliflower
+                        </h3>
+
+                        <div class="flex items-center justify-between text-sm mb-3">
+                            <span class="text-primary font-bold">R30 / kg</span>
+                            <span class="text-green-600 flex items-center gap-1">
+                                <i class="fa-solid fa-circle-check text-xs"></i> In Stock
+                            </span>
+                        </div>
+
+                        <!-- ACTIONS -->
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-primary text-white py-2 rounded-xl font-semibold
+               hover:bg-primaryDark hover:shadow-md
+               transition active:scale-95">
+                                <i class="fa-solid fa-cart-plus mr-1"></i> Add
+                            </button>
+
+                            <a href="shop-details.html">
+                                <button class="w-11 h-10 border border-primary text-primary rounded-xl
+               hover:bg-primary hover:text-white transition">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- SUBTLE GLOW -->
+                    <div class="absolute inset-0 rounded-3xl ring-1 ring-primary
+           opacity-0 group-hover:opacity-15 transition pointer-events-none">
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-green-100 py-16 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10 relative z-10">
+
+            <!-- Brand -->
+            <div class="fade-up">
+                <h3 class="text-2xl font-bold text-white">🌿 Freshi</h3>
+                <p class="text-sm mt-3 text-green-200">
+                    Fresh, organic groceries delivered with care and trust.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="fade-up">
+                <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">Shop</a></li>
+                    <li><a href="#" class="hover:text-white transition">Categories</a></li>
+                    <li><a href="#" class="hover:text-white transition">Blogs</a></li>
+                    <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="fade-up">
+                <h4 class="font-semibold text-white mb-4">Support</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:text-white transition">Help Center</a></li>
+                </ul>
+            </div>
+
+            <!-- Social + Newsletter -->
+            <div class="fade-up">
+                <h4 class="font-semibold text-white mb-4">Stay Connected</h4>
+
+                <div class="flex gap-4 text-xl mb-4">
+                    <i class="fa-brands fa-facebook-f hover:scale-110 hover:text-white transition cursor-pointer"></i>
+                    <i class="fa-brands fa-instagram hover:scale-110 hover:text-white transition cursor-pointer"></i>
+                    <i class="fa-brands fa-twitter hover:scale-110 hover:text-white transition cursor-pointer"></i>
+                </div>
+
+                <div class="flex mt-4">
+                    <input type="email" placeholder="Your email"
+                        class="w-full px-4 py-2 rounded-l-full outline-none text-gray-800" />
+                    <button class="bg-white text-primary px-5 rounded-r-full hover:bg-lightBg transition">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-green-400 mt-12 pt-6 text-center text-sm text-green-200 relative z-10">
+            © 2026 Freshi. All rights reserved.
+        </div>
+
+        <!-- Decorative Blur -->
+        <div class="absolute -bottom-24 -right-24 w-80 h-80 bg-green-300 opacity-20 rounded-full blur-3xl"></div>
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!-- License ID: DEVOMATE-SRC-20260120-WDUXQAF9EG | ashyben10@gmail.com | 2026-01-20 01:03:41 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freshi – Organic Grocery</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Custom Tailwind Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2F7D32',
+                        primaryDark: '#256428',
+                        softGreen: '#A5D6A7',
+                        lightBg: '#F5F5DC'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-white text-gray-800">
+
+
+    <!-- TOPBAR -->
+    <div class="border-b bg-white fade-in">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+
+
+            <!-- CENTER LOGO -->
+            <div class="text-2xl font-bold text-primary tracking-wide">
+                🌿 Freshi
+            </div>
+
+            <!-- SEARCH -->
+            <div class="hidden md:flex flex-1 max-w-md">
+                <div class="relative w-full">
+                    <input type="text" placeholder="Search organic products..."
+                        class="w-full border rounded-full px-4 py-2 pl-10 focus:ring-2 focus:ring-primary outline-none" />
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+
+            <!-- RIGHT ICONS -->
+            <div class="flex items-center gap-5">
+                <!-- Cart -->
+                <a href="cart.html">
+                    <div class="relative cursor-pointer hover:scale-110 transition">
+                        <i class="fa-solid fa-cart-shopping text-xl text-gray-700"></i>
+                        <span
+                            class="absolute -top-2 -right-2 bg-primary text-white text-xs px-1.5 rounded-full">2</span>
+                    </div>
+                </a>
+
+
+                <!-- Profile Dropdown -->
+                <div class="relative group">
+                    <i class="fa-solid fa-user text-xl cursor-pointer text-gray-700"></i>
+
+                    <!-- Dropdown -->
+                    <div
+                        class="absolute right-0 mt-3 w-40 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto">
+                        <a href="#" class="block px-4 py-2 hover:bg-lightBg">Login</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-lightBg">Register</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-lightBg">Orders</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-md fade-up sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <ul class="flex justify-center gap-10 py-4 font-semibold text-gray-700">
+
+                <a href="index.html">
+                    <li class="relative group cursor-pointer transition hover:-translate-y-0.5">
+                        <span>Home</span>
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                </a>
+
+
+                <a href="shop.html">
+                    <li class="relative group cursor-pointer transition hover:-translate-y-0.5">
+                        <span>Shop</span>
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                </a>
+
+                <a href="categories.html">
+                    <li class="relative group cursor-pointer transition hover:-translate-y-0.5">
+                        <span>Categories</span>
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                </a>
+
+                <a href="blogs.html">
+                    <li class="relative group cursor-pointer transition hover:-translate-y-0.5">
+                        <span>Blogs</span>
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+                </a>
+
+                <a href="contact.html">
+
+                    <li class="relative group cursor-pointer transition hover:-translate-y-0.5">
+                        <span>Contact</span>
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </li>
+
+                </a>
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- CART HEADER -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6 fade-up">
+            <h1 class="text-3xl font-extrabold">
+                Your <span class="text-primary">Cart</span>
+            </h1>
+            <p class="text-gray-600 mt-1">
+                Review your selected organic products
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- CART CONTENT -->
+    <section class="py-16 bg-lightBg">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-10">
+
+            <!-- CART ITEMS -->
+            <div class="lg:col-span-2 space-y-6">
+
+                <!-- CART ITEM -->
+                <div class="cart-item bg-white rounded-2xl shadow-md p-5 flex gap-5 items-center fade-up"
+                    data-price="120">
+
+                    <!-- IMAGE -->
+                    <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+                        class="w-24 h-24 object-cover rounded-xl" />
+
+                    <!-- INFO -->
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-lg">Organic Apples</h3>
+                        <p class="text-primary font-bold">R30 / kg</p>
+
+                        <!-- QUANTITY -->
+                        <div class="flex items-center gap-3 mt-2">
+                            <button class="qty-minus px-3 py-1 border rounded-lg">−</button>
+                            <span class="qty text-lg">1</span>
+                            <button class="qty-plus px-3 py-1 border rounded-lg">+</button>
+                        </div>
+                    </div>
+
+                    <!-- TOTAL + REMOVE -->
+                    <div class="text-right">
+                        <p class="item-total font-bold text-lg">R30</p>
+                        <button class="remove-item text-red-500 text-sm mt-2 hover:underline">
+                            Remove
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Duplicate cart-item for more products -->
+
+            </div>
+
+            <!-- SUMMARY -->
+            <div class="bg-white rounded-2xl shadow-md p-6 h-fit fade-up">
+
+                <h3 class="text-xl font-bold mb-6">Order Summary</h3>
+
+                <div class="space-y-3 text-gray-600">
+                    <div class="flex justify-between">
+                        <span>Subtotal</span>
+                        <span id="subtotal">R30</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Delivery</span>
+                        <span>R30</span>
+                    </div>
+                    <div class="flex justify-between font-semibold text-lg text-gray-900">
+                        <span>Total</span>
+                        <span id="grandTotal">R60</span>
+                    </div>
+                </div>
+
+                <a href="checkout.html">
+                    <button class="w-full mt-6 bg-primary text-white py-3 rounded-xl font-semibold
+               hover:bg-primaryDark hover:shadow-lg transition">
+                        Proceed to Checkout
+                    </button>
+                </a>
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-green-100 py-16 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10 relative z-10">
+
+            <!-- Brand -->
+            <div class="fade-up">
+                <h3 class="text-2xl font-bold text-white">🌿 Freshi</h3>
+                <p class="text-sm mt-3 text-green-200">
+                    Fresh, organic groceries delivered with care and trust.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="fade-up">
+                <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">Shop</a></li>
+                    <li><a href="#" class="hover:text-white transition">Categories</a></li>
+                    <li><a href="#" class="hover:text-white transition">Blogs</a></li>
+                    <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="fade-up">
+                <h4 class="font-semibold text-white mb-4">Support</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:text-white transition">Help Center</a></li>
+                </ul>
+            </div>
+
+            <!-- Social + Newsletter -->
+            <div class="fade-up">
+                <h4 class="font-semibold text-white mb-4">Stay Connected</h4>
+
+                <div class="flex gap-4 text-xl mb-4">
+                    <i class="fa-brands fa-facebook-f hover:scale-110 hover:text-white transition cursor-pointer"></i>
+                    <i class="fa-brands fa-instagram hover:scale-110 hover:text-white transition cursor-pointer"></i>
+                    <i class="fa-brands fa-twitter hover:scale-110 hover:text-white transition cursor-pointer"></i>
+                </div>
+
+                <div class="flex mt-4">
+                    <input type="email" placeholder="Your email"
+                        class="w-full px-4 py-2 rounded-l-full outline-none text-gray-800" />
+                    <button class="bg-white text-primary px-5 rounded-r-full hover:bg-lightBg transition">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-green-400 mt-12 pt-6 text-center text-sm text-green-200 relative z-10">
+            © 2026 Freshi. All rights reserved.
+        </div>
+
+        <!-- Decorative Blur -->
+        <div class="absolute -bottom-24 -right-24 w-80 h-80 bg-green-300 opacity-20 rounded-full blur-3xl"></div>
+    </footer>
+
+    <script>
+        function updateCartTotals() {
+            let subtotal = 0;
+
+            document.querySelectorAll(".cart-item").forEach(item => {
+                const price = Number(item.dataset.price);
+                const qty = Number(item.querySelector(".qty").innerText);
+                const itemTotal = price * qty;
+
+                item.querySelector(".item-total").innerText = `R${itemTotal}`;
+                subtotal += itemTotal;
+            });
+
+            document.getElementById("subtotal").innerText = `R${subtotal}`;
+            document.getElementById("grandTotal").innerText = `R${subtotal + 30}`;
+        }
+
+        document.querySelectorAll(".cart-item").forEach(item => {
+
+            item.querySelector(".qty-plus").onclick = () => {
+                const qtyEl = item.querySelector(".qty");
+                qtyEl.innerText = Number(qtyEl.innerText) + 1;
+                updateCartTotals();
+            };
+
+            item.querySelector(".qty-minus").onclick = () => {
+                const qtyEl = item.querySelector(".qty");
+                if (Number(qtyEl.innerText) > 1) {
+                    qtyEl.innerText = Number(qtyEl.innerText) - 1;
+                    updateCartTotals();
+                }
+            };
+
+            item.querySelector(".remove-item").onclick = () => {
+                item.remove();
+                updateCartTotals();
+            };
+
+        });
+
+        updateCartTotals();
+    </script>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

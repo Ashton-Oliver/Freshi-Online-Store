@@ -1,0 +1,46 @@
+/* License ID: DEVOMATE-SRC-20260120-WDUXQAF9EG | ashyben10@gmail.com | 2026-01-20 01:03:41 */
+     .fade-up {
+            animation: fadeUp 0.8s ease-out both;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out both;
+        }
+
+        .slide-up {
+            animation: slideUp 0.7s ease-out both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
