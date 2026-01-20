@@ -159,7 +159,7 @@
 
                 <!-- CART ITEM -->
                 <div class="cart-item bg-white rounded-2xl shadow-md p-5 flex gap-5 items-center fade-up"
-                    data-price="120">
+                    data-price="30">
 
                     <!-- IMAGE -->
                     <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
@@ -289,53 +289,60 @@
         <!-- Decorative Blur -->
         <div class="absolute -bottom-24 -right-24 w-80 h-80 bg-green-300 opacity-20 rounded-full blur-3xl"></div>
     </footer>
+        
+     <script>
+       function updateCartTotals() {
+  let subtotal = 0;
+  document.querySelectorAll(".cart-item").forEach(item => {
+    const price = parseInt(item.dataset.price);
+    const qty = parseInt(item.querySelector(".qty").innerText);
+    const itemTotal = price * qty;
+    item.querySelector(".item-total").innerText = `R${itemTotal}`;
+    subtotal += itemTotal;
+  });
 
-    <script>
-        function updateCartTotals() {
-            let subtotal = 0;
+  document.getElementById("subtotal").innerText = `R${subtotal}`;
+  const deliveryFee = subtotal > 0 ? 30 : 0;
+  document.getElementById("grandTotal").innerText = `R${subtotal + deliveryFee}`;
+}
 
-            document.querySelectorAll(".cart-item").forEach(item => {
-                const price = Number(item.dataset.price);
-                const qty = Number(item.querySelector(".qty").innerText);
-                const itemTotal = price * qty;
+function checkEmptyCart() {
+  if (document.querySelectorAll(".cart-item").length === 0) {
+    document.querySelector(".lg\\:col-span-2").innerHTML =
+      "<p class='text-center text-gray-600'>Your cart is empty.</p>";
+  }
+}
 
-                item.querySelector(".item-total").innerText = `R${itemTotal}`;
-                subtotal += itemTotal;
-            });
+document.querySelectorAll(".cart-item").forEach(item => {
+  item.querySelector(".qty-plus").onclick = () => {
+    const qtyEl = item.querySelector(".qty");
+    qtyEl.innerText = parseInt(qtyEl.innerText) + 1;
+    updateCartTotals();
+  };
 
-            document.getElementById("subtotal").innerText = `R${subtotal}`;
-            document.getElementById("grandTotal").innerText = `R${subtotal + 30}`;
-        }
+  item.querySelector(".qty-minus").onclick = () => {
+    const qtyEl = item.querySelector(".qty");
+    if (parseInt(qtyEl.innerText) > 1) {
+      qtyEl.innerText = parseInt(qtyEl.innerText) - 1;
+      updateCartTotals();
+    }
+  };
 
-        document.querySelectorAll(".cart-item").forEach(item => {
+  item.querySelector(".remove-item").onclick = () => {
+    item.remove();
+    updateCartTotals();
+    checkEmptyCart();
+  };
+});
 
-            item.querySelector(".qty-plus").onclick = () => {
-                const qtyEl = item.querySelector(".qty");
-                qtyEl.innerText = Number(qtyEl.innerText) + 1;
-                updateCartTotals();
-            };
+updateCartTotals();
 
-            item.querySelector(".qty-minus").onclick = () => {
-                const qtyEl = item.querySelector(".qty");
-                if (Number(qtyEl.innerText) > 1) {
-                    qtyEl.innerText = Number(qtyEl.innerText) - 1;
-                    updateCartTotals();
-                }
-            };
-
-            item.querySelector(".remove-item").onclick = () => {
-                item.remove();
-                updateCartTotals();
-            };
-
-        });
-
-        updateCartTotals();
     </script>
 
 
     <script src="js/main.js"></script>
 
 </body>
+
 
 </html>
